@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * A string of binary numbers are converted to unsigned int in this file
- * c is a string containing the binary number
- * The converted number is returned
+ *binar_to_uint- A string of binary numbers are converted to unsigned int in this file
+ *@c- a string containing the binary number
+ * @c_val-The converted number is returned
  */
 
 unsigned int binary_to_uint(const char *c)
