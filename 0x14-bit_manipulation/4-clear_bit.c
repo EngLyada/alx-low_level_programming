@@ -1,15 +1,17 @@
 #include "main.h"
 
 /**
- * method sets given bit to 0
- * k is a pointer to the number 
- * i is an index of the bit
+ * clear_bit - sets the value of a given bit to 0
+ * @z: pointer to the number to change
+ * @i: index of the bit to clear
+ *
+ * Return: 1 for success, -1 for failure
  */
-int clear_bit(unsigned long int *k, unsigned int i)
+int clear_bit(unsigned long int *z, unsigned int i)
 {
-  if (i > 63)
-    return (-1);
+	if (i > 63)
+		return (-1);
 
-  *n = (~(1UL << i) & *k);
-  return (1);
+	*n = (~(1UL << i) & *z);
+	return (1);
 }

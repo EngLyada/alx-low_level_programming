@@ -1,23 +1,22 @@
-#include "main.h"
-
 /**
- * method counts the bits number from one number to another
- * @one: first number
- * @two: second number
+ * flip_bits - return number of bits that would need to be flipped to
+ * transform one number to another
  *
+ * @a: first number
+ * @b: second number
+ *
+ * Return: number of bits to flip to convert numbers
  */
-unsigned int flip_bits(unsigned long int one, unsigned long int two)
+unsigned int flip_bits(unsigned long int a, unsigned long int b)
 {
-  int i, counter = 0;
-  unsigned long int current;
-  unsigned long int e = one ^ two;
+	unsigned long int xorval = a ^ b;
+	unsigned int count = 0;
 
-  for (i = 63; i >= 0; i--)
-  {
-    current = e >> i;
-    if (current & 1)
-      counter++;
-  }
-
-  return (counter);
+	while (xorval)
+	{
+		if (xorval & 1ul)
+			count++;
+		xorval = xorval >> 1;
+	}
+	return (count);
 }
