@@ -2,12 +2,13 @@
 #include <stdlib.h>
 
 /**
- * read_textfile- Read text file print
- * @f_name: text file being read
- * @l: no of read letters in the file f_name
- * Return: wrt-Read and printed number of bytes 
- *
- */
+ * read_textfile- File print to STDOUT.
+ * @f_name: text file to be read
+ * @l: Letters to be read
+ * Return: wrt- Number of bytes read and printed
+ *        0 for function fail or NULL filename
+*/
+
 ssize_t read_textfile(const char *f_name, size_t l)
 {
 	char *buf;
