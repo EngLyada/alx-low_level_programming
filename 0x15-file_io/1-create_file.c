@@ -20,7 +20,7 @@ int create_file(const char *f_name, char *txt_cont)
 			l++;
 	}
 
-	d = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	d = open(f_name, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	x = write(d, txt_cont, l);
 
 	if (d == -1 || x == -1)

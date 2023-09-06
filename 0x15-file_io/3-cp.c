@@ -6,8 +6,9 @@ char *create_buffer(char *f_name);
 void close_file(int d);
 
 /**
- * create_buffer -Allocation of 1024 bytes to a buffer.
- * @f_name: The name of the file buffer storing the char *
+ * create_buffer - Allocates 1024 bytes allocated for a buffer.
+ * @f_name: The name of the file buffer is storing chars for.
+ *
  * Return: A pointer to the newly-allocated buffer.
  */
 char *create_buffer(char *f_name)
@@ -64,8 +65,8 @@ int main(int ac, char *av[])
 
 	bf = create_buffer(av[2]);
 	fm = open(av[1], O_RDONLY);
-	rd = read(from, buffer, 1024);
-	t = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	rd = read(fm, bf, 1024);
+	t = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 		if (fm == -1 || rd == -1)
@@ -91,8 +92,8 @@ int main(int ac, char *av[])
 	} while (rd > 0);
 
 	free(bf);
-	c_file(fm);
-	c_file(t);
+	close_file(fm);
+	close_file(t);
 
 	return (0);
 }
